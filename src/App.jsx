@@ -25,12 +25,17 @@ function App() {
   const {
     register,
     handleSubmit,
+    resetField,
     watch,
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
   function onSubmit(userData) {
     console.log(userData);
+    resetField("name");
+    resetField("email");
+    resetField("password");
+    resetField("confirmPassword");
   }
 
   return (
